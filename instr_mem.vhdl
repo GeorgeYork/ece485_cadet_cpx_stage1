@@ -19,8 +19,8 @@ architecture Behavioral of instr_mem is
         4 => x"<replace with machine code>", --       lw x10, 0(x6)    
         5 => x"<replace with machine code>", --       add x7, x10, x7 
         6 => x"<replace with machine code>", --       subi x5, x5, 1 (or "addi x5, x5, -1")  
-        7 => x"<replace with machine code>", --     bne x5, x0, loop   1 [branch -20 bytes; note: assumes PC is incremented by 4]
-        8 => x"<replace with machine code>", -- done: j done             [jump -4 bytes; note: assumes PC is incremented by 4]               
+        7 => x"<replace with machine code>", --       bne x5, x0, loop   [jump -20 bytes; note: assumes PC is incremented by 4 and imm jumps by words, not bytes]
+        8 => x"<replace with machine code>", -- done: j done             [jump  -4 bytes; note: assumes PC is incremented by 4 and imm jumps by words, not bytes]               
         others => (others => '0')
     );
 begin
